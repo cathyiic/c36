@@ -1,8 +1,7 @@
+//assignment using printf to print out my name
 #include <stdio.h>
 
-void main()
+int main()
 {
-    printf("Hi, I am Catherine Ichwan!");
-
-    return 0;
+    printf("Hi, I am Catherine Ichwan!\n");
 }
