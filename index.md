@@ -1,4 +1,4 @@
-# Here is a link to all of the programs that I have written by myself in CS36 (C Programming) class
+# CS36 (C Programming) class links to assignments and projects (Code written by me)
 
 **Some things about me**
 
