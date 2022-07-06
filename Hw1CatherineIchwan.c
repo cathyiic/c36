@@ -14,7 +14,46 @@
 */
 
 #include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 
 int main(){
-    
+    int count = 0;
+    char name[50];
+    double rate;
+    double hours;
+    double pay;
+    double grossPay;
+
+    do{
+        printf("Please enter your name : ");
+        scanf("%s", name);
+
+        printf("Please enter your hourly rate : ");
+        scanf("%lf", &rate);
+
+        printf("Please enter the hours you work in a week : ");
+        scanf("%lf", &hours);
+
+        if (hours > 40){
+            grossPay = (40 * rate) + (hours - 40) * rate * 1.5;
+        }
+        else {
+            grossPay = hours * rate;
+        }
+
+        double taxes = grossPay * 0.2;
+        double netAmount = grossPay - taxes;
+
+        printf("Pay to : %s\n", name);
+        printf("The hourly rate is : $%lf\n", rate);
+        printf("The number of hours worked is : $%lf\n", hours);
+        printf("The weekly gross pay is : $%lf\n", grossPay);
+        printf("The taxes withehld is : $%lf\n", taxes);
+        printf("The net paid, amount of the check issued is : $%lf\n", netAmount);
+        count += 1;
+    }
+    while (count < 5);
+
+    return 0;
 }
+
