@@ -30,7 +30,7 @@ int main(){
 
         printf("Please enter your hourly rate : ");
         scanf("%lf", &rate);
-
+        
         printf("Please enter the hours you work in a week : ");
         scanf("%lf", &hours);
 
@@ -56,4 +56,41 @@ int main(){
 
     return 0;
 }
+/* Sample Output (Just took Professor's examples)
+Pay to : Glenn
+The hourly rate is : $4.000000
+The number of hours worked is : $20.000000
+The weekly gross pay is : $80.000000
+The taxes withehld is : $16.000000
+The net paid, amount of the check issued is : $64.000000
+
+Pay to : Stephanie
+The hourly rate is : $49.750000
+The number of hours worked is : $60.500000
+The weekly gross pay is : $3519.812500
+The taxes withehld is : $703.962500
+The net paid, amount of the check issued is : $2815.850000
+
+Pay to : Lumine
+The hourly rate is : $2.000000
+The number of hours worked is : $50.000000
+The weekly gross pay is : $110.000000
+The taxes withehld is : $22.000000
+The net paid, amount of the check issued is : $88.000000
+
+Pay to : Hutao
+The hourly rate is : $50.000000
+The number of hours worked is : $20.000000
+The weekly gross pay is : $1000.000000
+The taxes withehld is : $200.000000
+The net paid, amount of the check issued is : $800.000000
+
+The hourly rate is : $100200.000000
+The number of hours worked is : $30.000000
+The weekly gross pay is : $3006000.000000
+The taxes withehld is : $601200.000000
+The net paid, amount of the check issued is : $2404800.000000
+
+-end of the loop since five users have already been looped
+*/
 
