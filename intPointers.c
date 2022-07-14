@@ -18,7 +18,7 @@ int main(){
     for (int i =0; i < 10; i++){
         printf("Element value via [] is %d\n", arrrayOfInts[i]);
         printf("Element value via [] is %d\n", pointsToArrayOfInts);
-        pointsToSomeNumber++;
+        pointsToArrayOfInts++;
     }
 
     return 0;
