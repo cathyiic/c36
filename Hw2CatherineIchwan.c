@@ -14,52 +14,55 @@
 #include <stdio.h>
 #define _CRT_SECURE_NO_WARNINGS
 
-int main(){
-    int i; //variable for the for loop
-    char name[50];
-    double rate;
-    double hours;
-    double pay;
-    double grossPay;
+int main(void){
+    char name[5][50];
+    double rate[10];
+    double hours[10];
+    double pay[10];
+    double grossPay[10];
+    double taxes[10];
+    double netAmount[10];
 
-    for (i = 0 ; i < 6; i++){
+    for (int i = 0 ; i < 6; i++){
         printf("Please enter your name : ");
-        scanf("%s", name);
+        scanf("%s", name[i]);
         //if user enters -1, break (for all entered fields)
-        if (name == -1){
+        if (name[i][0] = "-" && name[i][1] == -1){
             break;
         }
 
         printf("Please enter your hourly rate : ");
-        scanf("%lf", &rate);
-        if (rate == -1){
+        scanf("%lf", &rate[i]);
+        if (rate[i] == -1){
             break;
         }
 
         printf("Please enter the hours you work in a week : ");
-        scanf("%lf", &hours);
-        if (hours == -1){
+        scanf("%lf", &hours[i]);
+        if (hours[i] == -1){
             break;
         }
 
         if (hours > 40){
-            grossPay = (40 * rate) + (hours - 40) * rate * 1.5;
+            grossPay[i] = (40 * rate[i]) + (hours[i] - 40) * rate[i] * 1.5;
         }
         else {
-            grossPay = hours * rate;
+            grossPay[i] = hours[i] * rate[i];
         }
 
-        double taxes = grossPay * 0.2;
-        double netAmount = grossPay - taxes;
+        taxes[i] = grossPay[i] * 0.2;
+        netAmount[i] = grossPay[i] - taxes[i];
 
-        printf("Pay to : %s\n", name);
+    }
+
+    for (int i = 0; i < 6; i++){
+        printf("Pay to : %s\n", name[i]);
         printf("The hourly rate is : $%lf\n", rate);
         printf("The number of hours worked is : $%lf\n", hours);
         printf("The weekly gross pay is : $%lf\n", grossPay);
-        printf("The taxes withehld is : $%lf\n", taxes);
-        printf("The net paid, amount of the check issued is : $%lf\n", netAmount);
+        printf("The taxes withehld is : $%lf\n", taxes[i]);
+        printf("The net paid, amount of the check issued is : $%lf\n", netAmount[i]);
     }
-
 
     return 0;
 }
