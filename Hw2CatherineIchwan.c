@@ -22,12 +22,14 @@ int main(void){
     double grossPay[10];
     double taxes[10];
     double netAmount[10];
+    int count = 0;
+
 
     for (int i = 0 ; i < 6; i++){
         printf("Please enter your name : ");
-        scanf("%s", name[i]);
+        scanf("%s", &name[i]);
         //if user enters -1, break (for all entered fields)
-        if (name[i][0] = "-" && name[i][1] == -1){
+        if (name[i][0] = '-' && name[i][1] == '1'){
             break;
         }
 
@@ -52,17 +54,37 @@ int main(void){
 
         taxes[i] = grossPay[i] * 0.2;
         netAmount[i] = grossPay[i] - taxes[i];
+        count++;
 
     }
 
-    for (int i = 0; i < 6; i++){
-        printf("Pay to : %s\n", name[i]);
-        printf("The hourly rate is : $%lf\n", rate);
-        printf("The number of hours worked is : $%lf\n", hours);
-        printf("The weekly gross pay is : $%lf\n", grossPay);
+    for (int i = 0; i < count; i++){
+        printf("Pay to : %s\n", name[i]); 
+        printf("The hourly rate is : $%lf\n", rate[i]);
+        printf("The number of hours worked is : %lf\n", hours[i]);
+        printf("The weekly gross pay is : $%lf\n", grossPay[i]);
         printf("The taxes withehld is : $%lf\n", taxes[i]);
         printf("The net paid, amount of the check issued is : $%lf\n", netAmount[i]);
     }
 
     return 0;
 }
+
+//sample input and output (used example from professor)
+/*Name: Glenn
+Rate: 2.00
+Hours: 50
+
+Name: Yelan 
+Rate: 40 
+Hours: -1
+
+Output: Pay to: Glenn
+Hours worked: 50.0
+Hourly rate: $2
+Gross pay: $110.00
+Taxes witheld: $22.00
+Net paid amount:$88.00
+
+Does not print anything for Yelan because loop breaks bc of -1 input
+*/
