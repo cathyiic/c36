@@ -13,30 +13,33 @@
 
 
 #include <stdio.h>
-#define _CRT_SECURE_NO_WARNINGS
 
+char loading(int* num1, int* num2){
+    int x;
+    printf("Please enter an integer: \n");
+    scanf("%d", &x);
+    *num1 = x;
 
-int loading(int* num1, int* num2){
-    printf("Please enter an integer: ");
-    scanf("%d", &num1);
-
-    printf("Please enter another integer: ");
-    scanf("%d", &num2);
+    int y;
+    printf("Please enter another integer: \n");
+    scanf("%d", &y);
+    *num2 = y;
 
     char letter;
-    printf("Please enter a character: ");
-    scanf("%c", &letter);
+    printf("Please enter a character: \n");
+    scanf("%s", &letter);
+
+    return letter;
 
 
 }
 
 int main(){
-    int* num1, num2; //defining the vars again
-    char letter;
-    loading(); //call the function
+    int first;
+    int second;
+    char load = loading(&first, &second);
 
-    printf("Here is the first number : %d", num1); //print the value of the variables
-    printf(""); 
-    printf("");
-    return 0;
+    printf("Here is the first number : %d\n", first); //print the value of the variables
+    printf("Here is the second number : %d\n", second);
+    printf("Here is the character: %c\n", load);
 }
