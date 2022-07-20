@@ -19,7 +19,7 @@ int f(int x){
 }
 
 int main(){
-    srand(unsigned)time(NULL);
+    srand((unsigned)time(NULL)); //generates rand num
 
     int guessMe = rand() % 100;
     int result = f(guessMe);
@@ -29,7 +29,7 @@ int main(){
             puts("too small");
         else 
             puts("too big");
-        result = f(10);
+        result = f(guessMe);
     }
     puts("You guessed it.");
 }
