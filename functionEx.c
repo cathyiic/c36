@@ -31,14 +31,51 @@ char menu1(){
     return input;
 
 }
+
+char menu2(char* array, int count){ //passed a c string
+    int isValid = 0;
+    char input = 'x';
+    do{
+        for (int i = 0; i < count; i++){
+            printf("%c\n", array[i]);
+        }
+
+        puts("Choice : ");
+        scanf("% c", &input);
+
+        for (int i = 0; i < count; i++){
+            if (input == array[i]){
+                isValid = 1;
+                break;
+            }
+        }
+    } while (isValid != 'e');
+    return input;
+
+}
+
+int smallest(int* array, int count){
+    int smallest = array[0];
+    for (int i = 1; i < count; i++){
+        if (array[i] < smallest){
+            smallest = array[i];
+        }
+    }
+    return smallest;
+}
+
 int main(){
-    function1();
+    /*function1();
     function1();
     function1();
 
     printf("%d\n", function2());
 
-    menu1();
+    putchar(menu1());
+    */
 
+    putchar(menu2("abcde", 5));
+    int num[5] = { 5, 2, 1, 3, 4};
+    printf("%d", smallest(num, 5));
     return 0;
 }
